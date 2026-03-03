@@ -14,8 +14,7 @@ app = Flask(__name__)
 # Import bot for role granting
 import bot as discord_bot
 
-# ✅ Dopo
-HTML_SUCCESS = open("verify.html", encoding="utf-8").read()
+HTML_SUCCESS = open("index.html", encoding="utf-8").read()
 
 @app.route("/callback")
 def callback():
@@ -60,3 +59,4 @@ def callback():
 
 if __name__ == "__main__":
     app.run(port=5000)
+
