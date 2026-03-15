@@ -121,3 +121,12 @@ def callback():
         success = False
 
     return render_template_string(HTML_SUCCESS, username=username, success=success)
+
+def run_bot():
+    bot.run(TOKEN)
+
+if __name__ == "__main__":
+    t = threading.Thread(target=run_bot, daemon=True)
+    t.start()
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
